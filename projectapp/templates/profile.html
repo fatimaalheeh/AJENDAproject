@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/agenda_profile.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a href="" class="deactive-btn">Main</a>
+            <a href="" class="a-btn">Events</a>
+            <a href="/profile" class="active-btn">Profile</a>
+            <a href="/logout" class="a-btn">Logout</a>
+            <a href="" class="empty"></a>
+        </nav>
+        <article>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="" class="active-btn">Main</a>
+                    <a href="" class="deactive-btn">Events</a>
+                    <a href="/profile" class="deactive-btn">Profile</a>
+                    <a href="/" class="deactive-btn">Logout</a>
+                </div>
+            </div>
+            <h1><span>my</span>Profile</h1>
+            <form action="/update" method="POST">
+                {% csrf_token %}
+            <table>
+                <tr>
+                    <td class="table_text">First Name</td>
+                    <td><input type="text" name="first_name"  value="{{request.session.first_name}}"></td>
+                </tr>
+                <tr>
+                    <td class="table_text">Last Name</td>
+                    <td><input type="text" name="last_name" value="{{request.session.last_name}}"></td>
+                </tr>
+                <tr>
+                    <td class="table_text">Email</td>
+                    <td><input type="text" name="email" value="{{request.session.user_email}}"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" value="{{request.session.user_password}}"></td>
+                </tr>
+                <tr><td></td><td><button type="submit" id="btn_login">save</button></td></tr>
+                
+            </table>
+            
+            </article>
+          
+
+        <figure>
+            <div class="backimg">
+                <table>
+                    <thead>
+                        <td>Title</td>
+                        <td>Description</td>
+                        <td>Actions</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T1</td>
+                            <td>D1</td>
+                            <td><a href="">Edit</a> | <a href="">Delete</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td><td></td><td><p><a href="">All events</a></p></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+        </figure>
+    
+    </main>
+</body>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</form>
+</html>

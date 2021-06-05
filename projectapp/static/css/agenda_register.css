@@ -1,0 +1,286 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu+Condensed&display=swap');
+
+
+
+
+.dropdown
+{
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.areg
+{
+    
+    text-decoration: none;
+    color: #FF7220;
+}
+
+
+
+
+
+.dropbtn {
+    background-color: white;
+    color: #FF7220;
+    
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #FF7220;
+    color: white    ;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body
+{
+    background-color: whitesmoke ;
+}
+main{
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+article{
+    padding: 50px;
+    padding-top: 1px;
+    padding-right: 20px;
+    background-color: white;
+}
+article h1
+{
+    color:#4d4482;
+}
+article h1 span{
+    color: #ff7220;
+}
+article h1 {
+    margin-top: 1px;
+    width: 70%;
+    padding-bottom: 20px;
+}
+article p{
+    width: 80%;
+    padding-bottom: 20px;
+}
+nav{
+    width:12% ;
+    display: flex;
+    flex-direction: column;
+}
+nav a{
+    padding: 20px;
+    text-align: center;
+    height: 30%;
+    border-radius: 24px 0px 0px 24px;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+    background-color: white;
+    }
+
+figure img{
+    align-self: stretch;
+    width: 400px;
+    height: auto;
+
+}
+#btn_register
+{
+    background-color: white;
+    border: 3px solid #4d4482;
+    color: #4d4482;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+#btn_login
+{
+    background-color: #FF7220;
+    border: 3px solid #E5851E;
+    color: white;
+    border-radius: 20px;
+    width: 100px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+}
+.active-btn
+{
+border: 3px solid #E5851E;
+background-color: #FF7220;
+color: white;
+}
+.deactive-btn
+{
+    border: 3px solid #e0e0e0;
+    background-color: rgb(221, 219, 219);
+    color: white;
+}
+h1
+{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-top: 20px;
+ 
+
+}
+p{
+    padding: 30px 0px 0px 0px ;
+    font-weight: lighter;
+    font-family: 'Lato', sans-serif;
+}
+.empty
+{
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px 0px 0px 0px;
+}
+table
+{
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    padding-bottom: 50px;
+    margin:0px auto;
+
+}
+td
+{
+    padding: 5px;
+}
+input
+{
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .dropdown
+    {
+    visibility: visible;
+    position: relative;
+    height: auto;
+
+    top: 0px;
+    width: 100%;
+    }
+	body
+    {
+        margin: 0px;
+    }
+    nav {
+		flex-direction: column;
+        width: 100%;
+        height: 0px;
+        visibility: hidden;
+        margin: 0px;
+	}
+    main {
+        margin-top:0px;
+		flex-direction: column;
+        width: 100%;
+
+	}
+	figure{
+        flex-direction: column;
+		width: 100%;
+        background-color: white;
+	}
+figure img {
+		font-size: 30px;
+        width: 100%;
+        height: auto;
+	}
+	
+}
+

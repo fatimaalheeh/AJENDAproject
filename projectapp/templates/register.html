@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/agenda_register.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a href="" class="deactive-btn">Main</a>
+            <a href="" class="deactive-btn">Events</a>
+            <a href="" class="deactive-btn">Profile</a>
+            <a href="" class="deactive-btn">Logout</a>
+            <a href="/main" class="empty">Go Back</a>
+        </nav>
+        <article>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="" class="active-btn">Main</a>
+                    <a href="" class="deactive-btn">Events</a>
+                    <a href="" class="deactive-btn">Profile</a>
+                    <a href="" class="deactive-btn">Logout</a>
+                </div>
+            </div>
+            <h1><span>Reg</span>ister</h1>
+            <form action="/registration" method="POST">
+                {% csrf_token %}
+            <table>
+                <tr>
+                    <td class="table_text">First Name</td>
+                    <td> <input type="text" name="first_name" placeholder="Give Me Your First Name"required></td>
+                </tr>
+                <tr>
+                    <td class="table_text">Last Name</td>
+                    <td> <input type="text" name="last_name" placeholder="Give Me Your Last Name"required></td>
+                </tr>
+                <tr>
+                    <td class="table_text">Email</td>
+                    <td><input type="email" name="email" placeholder="Give Me Your Email"required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" placeholder="Think in Good Password"required></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td> <input type="password" name="confirm_password" placeholder="Can you Repeat The Password"required></td>
+                </tr>
+                <tr><td><button id = "btn_login" type = "submit" value= "Make New Account">Join us now  </button></td><td><a class="areg" href="/">I Already Have An Account</a></td></tr>
+            </table>
+            </form>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+            </article>
+        <figure>
+            <img src="{% static 'images/agenda1.jpg' %}" />
+        </figure>
+    </main>
+</body>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</html>
