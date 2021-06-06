@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    {% load static%}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'css/agenda_event.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a href="" class="deactive-btn">Main</a>
+            <a href="" class="active-btn">Events</a>
+            <a href="" class="a-btn">Profile</a>
+            <a href="" class="a-btn">Logout</a>
+            <a href="/event" class="empty">go back</a>
+        </nav>
+        <article>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="" class="active-btn">Main</a>
+                    <a href="" class="deactive-btn">Events</a>
+                    <a href="" class="deactive-btn">Profile</a>
+                    <a href="" class="deactive-btn">Logout</a>
+                    <a href="/event" class="empty">go back</a>
+
+                </div>
+            </div>
+            
+            
+            <h1>&#x1F5D1; 
+
+            
+            <p></p>
+            
+        </h1>   
+        <form action="/save_details/{{event.id}}" method="POST">
+            {% csrf_token %}
+        <table>
+            <tr>
+                <td class="table_text">Title</td>
+                <td><input type="text" name="title"  value="{{event.title}}"></td>
+            </tr>
+            <tr>
+                <td class="table_text">Description</td>
+                <td><input type="text" name="description" value="{{event.description}}"></td>
+            </tr>
+            
+            <tr><td></td><td><button type="submit" id="btn_login">save</button></td></tr>
+            
+        </table>
+        </form>
+
+            </article>
+          
+            <figure>
+        
+            <div class="backimg">
+            </div>
+            
+        </figure>
+
+
+        
+    
+    </main>
+</body>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</html>

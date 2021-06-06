@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    {% load static%}
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Mrs+Sheppards&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a href="" class="active-btn">Main</a>
+            <a href="" class="deactive-btn">Events</a>
+            <a href="/profile" class="deactive-btn">Profile</a>
+            <a href="/" class="deactive-btn">Logout</a>
+            <a href="" class="empty"></a>
+        </nav>
+        <article>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="" class="active-btn">Main</a>
+                    <a href="" class="deactive-btn">Events</a>
+                    <a href="/profile" class="deactive-btn">Profile</a>
+                    <a href="/" class="deactive-btn">Logout</a>
+                </div>
+              </div>
+            <h1>Ya <span>100</span> Agendelcome</h1>
+            <p>
+                Agenda is a good choice to organize events and to discover new ones too. 
+            </p>
+            <a href="/"><button type="submit" id="btn_login" >login</button></a>
+            <a href="/register"><button type="submit" id="btn_register">register</button></a>
+        </article>
+        <figure>
+            <figcaption>
+
+            </figcaption>
+            <img  src="{% static 'images/agenda1.jpg' %}" />
+        </figure>
+    </main>
+   
+</body>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+</html>
