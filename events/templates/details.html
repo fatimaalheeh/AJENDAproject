@@ -15,21 +15,21 @@
 <body>
     <main>
         <nav>
-            <a href="" class="deactive-btn">Main</a>
-            <a href="" class="active-btn">Events</a>
-            <a href="" class="a-btn">Profile</a>
-            <a href="" class="a-btn">Logout</a>
+            
+            <a href="/events" class="active-btn">Events</a>
+            <a href="/profile" class="a-btn">Profile</a>
+            <a href="/logout" class="a-btn">Logout</a>
             <a href="/event" class="empty">go back</a>
         </nav>
         <article>
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="" class="active-btn">Main</a>
-                    <a href="" class="deactive-btn">Events</a>
-                    <a href="" class="deactive-btn">Profile</a>
-                    <a href="" class="deactive-btn">Logout</a>
-                    <a href="/event" class="empty">go back</a>
+                    <a href="#" class="active-btn">Main</a>
+                    <a href="/events/" class="deactive-btn">Events</a>
+                    <a href="/profile" class="deactive-btn">Profile</a>
+                    <a href="/ogout" class="deactive-btn">Logout</a>
+                    <a href="/event" class="a-btn">go back</a>
 
                 </div>
             </div>
@@ -46,48 +46,6 @@
           
 
         <figure>
-            <div class="backimg">
-                <h2>All Events</h2>
-                <form action="/add_event" method="POST" class="show_table_content">
-                    {%csrf_token%}
-                    <table  >
-                        <thead>
-                            <td>Title</td>
-                            <td>Description</td>
-                            <td>Actions</td>
-                        </thead>
-                        <tbody >
-                            
-                            <tr>
-                                <td><a href="/details/{{event.id}}">{{event.title}}</a></td>
-                                <td>{{event.description}}</td>
-                                <td><a href="/edit_details/{{event.id}}">Edit</a> | <a href="">Delete</a> | <a href="">Attend</a></td>
-                            </tr>
-                            
-                        </tbody>
-                        
-                    </table>
-                </form>
-                <form action="" >
-                <table>
-                    <h2>Attending</h2>      
-                    <thead>
-                        
-                        <td>Title</td>
-                        <td>Description</td>
-                        <td>Actions</td>
-                    </thead>
-                    <tbody class="show_table_content">
-                        <tr>
-                            <td><a href="">T1</a></td>
-                            <td>D1</td>
-                            <td><a href="">Cancel</a></td>
-                        </tr>
-                    </tbody>
-                    
-                </table>
-            </form>
-            </div>
             
         </figure>
 
